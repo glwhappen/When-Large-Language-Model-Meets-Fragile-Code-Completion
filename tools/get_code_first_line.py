@@ -1,4 +1,4 @@
-
+import re
 
 def get_line_two(code):
     if not isinstance(code, str):
