@@ -2,6 +2,8 @@
 
 The code for 'When Large Language Models Meet Fragile Code Completion' paper.
 
+![Overview of Our Research Methodology](doc/overview.png)
+
 ## Installation Requirements
 
 This project uses Python 3.10.
