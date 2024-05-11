@@ -34,4 +34,12 @@ Then unzip the data and ensure that the `dataset_path` specified in the `config.
 
 Run the `1.view_the_decompose_dataset.py` script to process the dataset and view the results according to the "Study Design > Dataset" section of the paper. The processed results will be cached in the project directory's cache folder. To reprocess the data, simply delete this folder.
 
+## RQ1
 
+### Exploring the Impact of Different Temperatures on OpenAI-GPT3.5 Code Completion Results
+
+> Note: This process will call the OpenAI GPT3.5 API over 10,000 times. For testing, you can modify the number of datasets returned by the `get_huge_code_list` function in `get_dataset/__init__.py` to a smaller set for testing purposes. After making changes, you need to delete the cache directory or just the temp folder below.
+
+Run the script `2.RQ1_Impact_of_Temperatures_on_GPT3.5_Code_Completion_Results.py` to see results similar to those depicted in the paper.
+
+![img.png](doc/RQ1_Impact_of_Temperatures_on_GPT3.5_Code_Completion_Results.png)
