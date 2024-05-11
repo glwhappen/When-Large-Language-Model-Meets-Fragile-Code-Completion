@@ -4,7 +4,18 @@ The code for 'When Large Language Models Meet Fragile Code Completion' paper.
 
 ![Overview of Our Research Methodology](doc/overview.png)
 
-[TOC]
+
+**Table of Contents**
+
+1. [Introduction](#when-large-language-models-meet-fragile-code-completion)
+2. [Installation Requirements](#installation-requirements)
+3. [Adding a Configuration File](#adding-a-configuration-file)
+4. [Dataset Download](#dataset-download)
+5. [Dataset Processing](#dataset-processing)
+6. [Research Questions](#rq1)
+   - [Impact of Different Temperatures on GPT3.5](#exploring-the-impact-of-different-temperatures-on-openai-gpt35-code-completion-results)
+   - [Impact of Different Temperatures Across LLMs](#exploring-the-impact-of-different-temperatures-on-code-completion-for-different-llms)
+
 
 ## Installation Requirements
 
