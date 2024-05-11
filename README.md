@@ -16,8 +16,9 @@ The code for 'When Large Language Models Meet Fragile Code Completion' paper.
    - [Impact of Different Temperatures on GPT3.5](#exploring-the-impact-of-different-temperatures-on-openai-gpt35-code-completion-results)
    - [Impact of Different Temperatures Across LLMs](#exploring-the-impact-of-different-temperatures-on-code-completion-for-different-llms)
    - [Impact of Different Token Lengths on Code Completion](#exploring-the-impact-of-different-token-lengths-on-code-completion)
-
-
+7. [Research Questions 2](#rq2)
+   - [The Code Types for Completion Results from Different Models](#the-code-types-for-completion-results-from-different-models)
+   - [The Code Types of the Fixed Code That Correspond to the Completed Code from Different Models](#the-code-types-of-the-fixed-code-that-correspond-to-the-completed-code-from-different-models)
 ## Installation Requirements
 
 This project uses Python 3.10.
@@ -84,3 +85,21 @@ Run the `1.view_the_decompose_dataset.py` script to process the dataset and view
 
 
 ![img.png](doc/RQ1_Explore_Impact_of_Token_Lengths_on_Code_Completion.png)
+
+
+## RQ2
+
+### The Code Types for Completion Results from Different Models
+
+> Note: After completing the previous steps, this part does not require the use of any API keys.
+
+Run the script `5.RQ2_Code_Types_for_Completion_Results_from_Different_Models.py` to obtain experimental results.
+
+![img.png](doc/RQ2_Code_Types_for_Completion_Results_from_Different_Models.png)
+### The Code Types of the Fixed Code That Correspond to the Completed Code from Different Models
+
+> Note: After completing the previous steps, this part does not require the use of any API keys.
+
+Run the script `6.RQ2_The_Code_Types_of_the_Fixed_Code_That_Correspond_to_the_Completed_Code_from_Different_Models.py` to obtain experimental results.
+
+![img.png](doc/RQ2_The_Code_Types_of_the_Fixed_Code_That_Correspond_to_the_Completed_Code_from_Different_Models.png)

@@ -217,8 +217,8 @@ class TreeSitter():
 
                     return tree
                 else:
-                    with open('other.txt', 'a') as file:
-                        file.writelines(tree['type'])
+                    # with open('other.txt', 'a') as file:
+                    #     file.writelines(tree['type'])
                     return {
                         "type": 'other'
                     }
