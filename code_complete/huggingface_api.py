@@ -49,16 +49,16 @@ def check(model, newpayload={}):
             "parameters": {"max_new_tokens": 10}
         }
     payload = payload | newpayload
-    print("request", model)
+    print("执行请求", model)
     for key in key_list:
         output = query(payload, model, key) # type: str {'error': 'Model Salesforce/codegen-2B-multi is currently loading', 'estimated_time': 227.7208709716797}
         print(output)
         if 'error' in output and output['error'].find('is currently loading') != -1:
             print(output)
-            print("wait", model)
+            print("进行等待", model)
             estimated_time = output['estimated_time']
             time.sleep(estimated_time)
-        print("pass", model, key)
+        print("检查通过", model, key)
 @cache(cache_dir='./cache/completion/huggingface/api_codegen/{model}/{random}')
 def api_codegen(code: str, model = "Salesforce/codegen-350M-multi", random: int = 1, newplayload={}):
     res = ""
@@ -101,14 +101,14 @@ def api_codegen(code: str, model = "Salesforce/codegen-350M-multi", random: int 
             pass
             print(res)
     except Exception as e:
-        print('api error', e)
+        print('api 发生错误', e)
         # 打印堆栈
         traceback.print_exc()
         raise
 
     if res == None:
-        print("error no result", res)
-        raise "error no result"
+        print("error 没有任何补全结果", res)
+        raise "error 没有任何补全结果"
 
     # Extracting and printing the 'generated_text' content
     return res
@@ -140,12 +140,12 @@ def api(code: str, model = "google/gemma-7b", random: int = 1, newplayload={}):
             pass
             print(res)
     except Exception as e:
-        print('api error', e)
+        print('api 发生错误', e)
         raise
 
     if res == None:
-        print("error no result", res)
-        raise "error no result"
+        print("error 没有任何补全结果", res)
+        raise "error 没有任何补全结果"
 
     # Extracting and printing the 'generated_text' content
     return res
@@ -160,7 +160,7 @@ def complete(code, max_tokens=200, prompt_max_tokens = 1000, model='google/gemma
             return code_complete.openai_completion.complete_random(random=random, code=code, temperature=temperature, max_tokens=max_tokens, prompt_max_tokens=prompt_max_tokens, model="gpt-3.5-turbo-instruct")
         except Exception as e:
             print(f"An error occurred: {e}")
-            raise
+            raise  # 重新抛出捕获到的异常
 
     if model == 'chatglm3':
         from code_complete.chatglm import complete

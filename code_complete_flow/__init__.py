@@ -11,7 +11,7 @@ from tools.sim import calculate_similarity_score
 
 @cache('./cache/temp/openai_api_complete')
 def flow_openai_api_complete(max_tokens=200, prompt_max_tokens=400, lcs_weight=0.0, led_weight=1.0, model='gpt-3.5-turbo-instruct', temperature=0.7):
-    print("Getting original code data containing errors")
+    print("Getting original code data")
     huge_code_list = get_huge_code_list()  # type: list[HugeCode]
 
     print(f"Filtering {len(huge_code_list)} data")
@@ -51,7 +51,7 @@ def flow_openai_api_complete(max_tokens=200, prompt_max_tokens=400, lcs_weight=0
 
     # print("Starting evaluation")
     count_result = get_complete_rq1_result(huge_code_list)
-    print("RQ1: Can existing large language models complete correct code?")
+
     print(count_result)
     return huge_code_list, count_result, max_tokens, prompt_max_tokens
 

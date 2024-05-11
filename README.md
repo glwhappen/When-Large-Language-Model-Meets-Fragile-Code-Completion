@@ -4,6 +4,8 @@ The code for 'When Large Language Models Meet Fragile Code Completion' paper.
 
 ![Overview of Our Research Methodology](doc/overview.png)
 
+[TOC]
+
 ## Installation Requirements
 
 This project uses Python 3.10.
@@ -22,6 +24,10 @@ config:
 openai-gpt3:
   api_base: https://api.openai.com/v1
   api_key: sk-xxx
+huggingface:
+  key_list:
+  - hf_xxx
+  - hf_xxx
 ```
 
 ## Dataset Download
@@ -38,8 +44,20 @@ Run the `1.view_the_decompose_dataset.py` script to process the dataset and view
 
 ### Exploring the Impact of Different Temperatures on OpenAI-GPT3.5 Code Completion Results
 
-> Note: This process will call the OpenAI GPT3.5 API over 10,000 times. For testing, you can modify the number of datasets returned by the `get_huge_code_list` function in `get_dataset/__init__.py` to a smaller set for testing purposes. After making changes, you need to delete the cache directory or just the temp folder below.
+> Note: This process will call the OpenAI GPT3.5 API over 10,000 times. For testing, you can modify the number of datasets returned by the `get_huge_code_list` function in `get_dataset/__init__.py` to a smaller set for testing purposes. After making changes, you need to delete the `cache` directory or just the `temp` folder below.
 
-Run the script `2.RQ1_Impact_of_Temperatures_on_GPT3.5_Code_Completion_Results.py` to see results similar to those depicted in the paper.
+1. Modify the `config.yml` file to add the `api_key` for `openai-gpt3`.
+
+2. Run the script `2.RQ1_Impact_of_Temperatures_on_GPT3.5_Code_Completion_Results.py` to see results similar to those depicted in the paper.
 
 ![img.png](doc/RQ1_Impact_of_Temperatures_on_GPT3.5_Code_Completion_Results.png)
+
+
+### Exploring the Impact of Different Temperatures on Code Completion for Different LLMs
+
+> Note: This process will call the OpenAI GPT3.5 API over 10,000 times and the HuggingFace API over 40,000 times. For testing, you can modify the number of datasets returned by the `get_huge_code_list` function in `get_dataset/__init__.py` to a smaller set for testing purposes. After making changes, you need to delete the `cache` directory or just the `temp` folder below.
+
+1. Modify the `config.yml` file to add the `key` for `huggingface`.
+2. Run the script `3.RQ1_Explore_Temperature_Impact_on_Code_Completion_Across_LLMs.py` to examine the impact of different temperatures on code completion across various LLMs as discussed in the paper.
+
+![img.png](doc/RQ1_Explore_Temperature_Impact_on_Code_Completion_Across_LLMs.png)

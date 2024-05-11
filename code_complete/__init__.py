@@ -77,7 +77,7 @@ import concurrent.futures
 
 
 if __name__ == '__main__':
-    print("Getting original code data containing errors")
+    print("Getting original code data")
     huge_code_list = get_huge_code_list()  # type: list[HugeCode]
 
     print(f"Filtering {len(huge_code_list)} data")
