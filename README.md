@@ -12,9 +12,10 @@ The code for 'When Large Language Models Meet Fragile Code Completion' paper.
 3. [Adding a Configuration File](#adding-a-configuration-file)
 4. [Dataset Download](#dataset-download)
 5. [Dataset Processing](#dataset-processing)
-6. [Research Questions](#rq1)
+6. [Research Questions 1](#rq1)
    - [Impact of Different Temperatures on GPT3.5](#exploring-the-impact-of-different-temperatures-on-openai-gpt35-code-completion-results)
    - [Impact of Different Temperatures Across LLMs](#exploring-the-impact-of-different-temperatures-on-code-completion-for-different-llms)
+   - [Impact of Different Token Lengths on Code Completion](#exploring-the-impact-of-different-token-lengths-on-code-completion)
 
 
 ## Installation Requirements
@@ -72,3 +73,14 @@ Run the `1.view_the_decompose_dataset.py` script to process the dataset and view
 2. Run the script `3.RQ1_Explore_Temperature_Impact_on_Code_Completion_Across_LLMs.py` to examine the impact of different temperatures on code completion across various LLMs as discussed in the paper.
 
 ![img.png](doc/RQ1_Explore_Temperature_Impact_on_Code_Completion_Across_LLMs.png)
+
+### Exploring the Impact of Different Token Lengths on Code Completion
+
+> Note: This process will call the OpenAI GPT3.5 API over 5,000 times.
+
+1. Modify the `config.yml` file to add the `api_key` for `openai-gpt3`.
+
+2. Run the script `4.RQ1_Explore_Impact_of_Token_Lengths_on_Code_Completion.py` to examine the impact of token lengths on code completion.
+
+
+![img.png](doc/RQ1_Explore_Impact_of_Token_Lengths_on_Code_Completion.png)
