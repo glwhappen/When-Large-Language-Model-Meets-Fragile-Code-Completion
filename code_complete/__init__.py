@@ -20,10 +20,15 @@ def openai_api_complete(huge_code_list: list[HugeCode], model='gpt-3.5-turbo-ins
 
     @retry(stop_max_attempt_number=5, wait_random_min=3000, wait_random_max=5000)
     def process_code(huge_code):
-        print(huge_code.file_name)
-        complete_result = complete(code_line2str(huge_code.huge_content_list_pre), max_tokens=max_tokens, prompt_max_tokens=prompt_max_tokens, model=model, temperature=temperature)
-        complete_result.complete_code = test_remove_copy_code(complete_result.complete_code)
-        huge_code.complete = complete_result
+        try:
+            print(huge_code.file_name)
+            complete_result = complete(code_line2str(huge_code.huge_content_list_pre), max_tokens=max_tokens, prompt_max_tokens=prompt_max_tokens, model=model, temperature=temperature)
+            complete_result.complete_code = test_remove_copy_code(complete_result.complete_code)
+            huge_code.complete = complete_result
+        except Exception as e:
+            print(f"Error processing {huge_code.file_name}: {e}")
+            raise e  # Rethrow the exception to handle it in the caller or further up the stack
+
 
 
     with concurrent.futures.ThreadPoolExecutor() as executor:

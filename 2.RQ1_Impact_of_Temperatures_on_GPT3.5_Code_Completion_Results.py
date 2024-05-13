@@ -83,4 +83,11 @@ def compare_gpt3_temperature():
 
 
 if __name__ == '__main__':
-    compare_gpt3_temperature()
+
+    while True:
+        try:
+            compare_gpt3_temperature()
+            break
+        except:
+            print("出错了，继续再来")
+

@@ -34,7 +34,10 @@ def get_line(code):
         # Extract the first statement and replace line breaks and extra spaces inside the statement with regular expressions
         first_statement2 = re.sub(r'\s+', ' ', match2.group(1)).strip() + ';'
 
-
+    if first_statement1 == "":
+        first_statement1 = code_without_comments.strip().split('\n')[0].strip()
+    if first_statement2 == "":
+        first_statement2 = code_without_comments.strip().split('\n')[0].strip()
 
     if len(first_statement1) == 0 and len(first_statement2) == 0:
         return None
@@ -51,6 +54,7 @@ def get_line(code):
 
     if len(first_statement1) < len(first_statement2):
         return first_statement1
+    return first_statement1
 
 
 
