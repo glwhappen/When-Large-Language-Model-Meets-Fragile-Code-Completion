@@ -19,6 +19,14 @@ The code for 'When Large Language Models Meet Fragile Code Completion' paper.
 7. [Research Questions 2](#rq2)
    - [The Code Types for Completion Results from Different Models](#the-code-types-for-completion-results-from-different-models)
    - [The Code Types of the Fixed Code That Correspond to the Completed Code from Different Models](#the-code-types-of-the-fixed-code-that-correspond-to-the-completed-code-from-different-models)
+8. [Research Questions 3](#rq3)
+   - [The Correct Results With Post-processing Approaches (Different Models)](#the_correct_results_with_post-processing_approaches_%28different_models%29)
+   - [The Correct Results With Post-processing Approaches (Different Temperatures)](#the_correct_results_with_post-processing_approaches_%28different_temperatures%29)
+
+
+
+
+
 ## Installation Requirements
 
 This project uses Python 3.10.
@@ -103,3 +111,31 @@ Run the script `5.RQ2_Code_Types_for_Completion_Results_from_Different_Models.py
 Run the script `6.RQ2_The_Code_Types_of_the_Fixed_Code_That_Correspond_to_the_Completed_Code_from_Different_Models.py` to obtain experimental results.
 
 ![img.png](doc/RQ2_The_Code_Types_of_the_Fixed_Code_That_Correspond_to_the_Completed_Code_from_Different_Models.png)
+
+
+
+## RQ3
+
+> Note: This process will call the OpenAI GPT3.5 API over 30,000 times and the HuggingFace API over 40,000 times. 
+
+The Correct Results With Post-processing Techniques (Voting) (Different Models)
+The Correct Results With Post-processing Techniques (PE) (Different Models)
+The Correct Results With Post-processing Techniques (Sel.) (Different Models)
+### The Correct Results With Post-processing Approaches (Different Models)
+Run the following three Python files to obtain the results shown in the figure below for RQ3:
+- `7.RQ3_Different_Models_Post-processing_Prompt.py`
+- `8.RQ3_Different_Models_Post-processing_Voting.py`
+- `9.RQ3_Different_Models_Post-processing_Select.py`
+
+![img.png](doc/RQ3_Different_Models_Post-processing.png)
+
+
+### The Correct Results With Post-processing Approaches (Different Temperatures)
+
+Run the following three Python files to obtain the results shown in the figure below for RQ3:
+- `10.RQ3_Different_Temperature_Post-processing_Prompt.py`
+- `11.RQ3_Different_Temperature_Post-processing_Voting.py`
+- `12.RQ3_Different_Temperature_Post-processing_Select.py`
+
+![img.png](doc/RQ3_Different_Temperature_Post-processing.png)
+
