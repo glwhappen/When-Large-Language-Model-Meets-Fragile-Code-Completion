@@ -20,10 +20,9 @@ The code for 'When Large Language Models Meet Fragile Code Completion' paper.
    - [The Code Types for Completion Results from Different Models](#the-code-types-for-completion-results-from-different-models)
    - [The Code Types of the Fixed Code That Correspond to the Completed Code from Different Models](#the-code-types-of-the-fixed-code-that-correspond-to-the-completed-code-from-different-models)
 8. [Research Questions 3](#rq3)
-   - [The Correct Results With Post-processing Approaches (Different Models)](#the_correct_results_with_post-processing_approaches_%28different_models%29)
-   - [The Correct Results With Post-processing Approaches (Different Temperatures)](#the_correct_results_with_post-processing_approaches_%28different_temperatures%29)
-
-
+   - [The Correct Results With Post-processing Approaches (Different Models)](#the-correct-results-with-post-processing-approaches-different-models)
+   - [The Correct Results With Post-processing Approaches (Different Temperatures)](#the-correct-results-with-post-processing-approaches-different-temperatures)
+9. [Discussion](#discussion)
 
 
 
@@ -118,9 +117,7 @@ Run the script `6.RQ2_The_Code_Types_of_the_Fixed_Code_That_Correspond_to_the_Co
 
 > Note: This process will call the OpenAI GPT3.5 API over 30,000 times and the HuggingFace API over 40,000 times. 
 
-The Correct Results With Post-processing Techniques (Voting) (Different Models)
-The Correct Results With Post-processing Techniques (PE) (Different Models)
-The Correct Results With Post-processing Techniques (Sel.) (Different Models)
+
 ### The Correct Results With Post-processing Approaches (Different Models)
 Run the following three Python files to obtain the results shown in the figure below for RQ3:
 - `7.RQ3_Different_Models_Post-processing_Prompt.py`
@@ -138,4 +135,19 @@ Run the following three Python files to obtain the results shown in the figure b
 - `12.RQ3_Different_Temperature_Post-processing_Select.py`
 
 ![img.png](doc/RQ3_Different_Temperature_Post-processing.png)
+
+## Discussion
+
+> Note: This process will call the OpenAI GPT3.5 API over 30,000 times and the HuggingFace API over 40,000 times. 
+
+
+Run the following six Python files to obtain the results shown in the figure below for Discussion:
+- `13.DIS_Two_Lines_Different_Models_Post-processing_Prompt.py`
+- `14.DIS_Two_Lines_Different_Models_Post-processing_Voting.py`
+- `15.DIS_Two_Lines_Different_Models_Post-processing_Select.py`
+- `16.DIS_Two_Lines_Different_Temperature_Post-processing_Prompt.py`
+- `17.DIS_Two_Lines_Different_Temperature_Post-processing_Voting.py`
+- `18.DIS_Two_Lines_Different_Temperature_Post-processing_Select.py`
+
+
 
